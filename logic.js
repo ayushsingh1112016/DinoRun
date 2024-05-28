@@ -34,7 +34,7 @@ window.onload = function() {
     character.onload = function() {
         function animate() {
             context.clearRect(0, 0, canvasWidth, canvasHeight);
-            context.drawImage(character, toggle ? px : 0, 0, px, py, 0, canvasHeight-py , px , py );
+            context.drawImage(character, toggle ? px : 0, 0, px, py, canvasWidth/2 - px, canvasHeight-py , px , py );
             if (x - lastFrameChangeTime >= frameInterval) {
                 toggle = !toggle; // Toggle between 0 and px
                 lastFrameChangeTime = x;
