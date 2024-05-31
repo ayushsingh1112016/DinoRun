@@ -1,2 +1,2 @@
-# DinoRun
-Basic Chrome Dino game
+# dinoRun2
+testRun
