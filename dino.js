@@ -388,5 +388,7 @@ function startGame() {
 
 window.addEventListener('keypress', startGame);
 canvas.addEventListener('onClick', startGame);
+window.addEventListener('touchstart', startGame);
+
 
 
