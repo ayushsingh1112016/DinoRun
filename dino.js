@@ -360,9 +360,15 @@ function gameReset() {
     cactus2Array = [];
 }
 
+
 let gameValue = 0;
 
 function animate() {
+    milSec++;
+    if(milSec % 5 === 0) score++;
+    if(score >= highScore) highScore = score;
+    if(milSec === 1000) milSec = 0;
+    if(score > 0 && score % 100 === 0) gameSpeed += .15;
     if (dinoCollision(currentDino)) {
         gameValue = 0;
         return;
@@ -374,12 +380,20 @@ function animate() {
     startEnemyGeneration();
     drawEnemies();
     updateEnemies();
+
+    // Update score and high score elements
+    document.getElementById('Score').textContent = "Score: " + score;
+    document.getElementById('highScore').textContent = "High Score: "+highScore;
+
+    // Request next animation frame
     requestAnimationFrame(animate);
 }
 
 
 function startGame() {
     if (gameValue === 0) {
+        score = 0;
+        gameSpeed = 7;
         gameReset();
         gameValue = 1;
         animate();
@@ -389,6 +403,6 @@ function startGame() {
 window.addEventListener('keypress', startGame);
 canvas.addEventListener('onClick', startGame);
 window.addEventListener('touchstart', startGame);
-
-
-
+let score = 0;
+let highScore = 0;
+let milSec = 0;

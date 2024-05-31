@@ -1,5 +1,8 @@
 #gameCanvas{
-    border: solid black 2px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid black;
 }
 
 .container{
@@ -10,12 +13,28 @@
     justify-content: center;
     align-items: center;
 }
-.Screen{
-    width: 1202px;
-    height: 300px;
-    border: solid black 2px;
-}
+
 
 body{
     scroll-behavior: unset;
 }
+
+.scores {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold;
+    position: relative; /* Required for absolute positioning */
+    width: 600px;
+}
+
+#highScore {
+    padding: 10px; /* Optional: Add some padding to create space between text and border */
+}
+
+#score {
+    padding: 10px; /* Optional: Add some padding to create space between text and border */
+}
+
+
+
