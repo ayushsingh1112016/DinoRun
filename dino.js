@@ -1,6 +1,6 @@
 const canvas = document.getElementById('gameCanvas');
 const context = canvas.getContext('2d');
-var gameSpeed = 7;
+var gameSpeed = 5;
 const screenHeight = 200;
 const screenWidth = 1202;
 
